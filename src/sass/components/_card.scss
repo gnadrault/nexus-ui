@@ -1,0 +1,44 @@
+.cards {
+  display: grid;
+  grid-gap: 2rem;
+  @media screen and (min-width: 1025px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  padding: 1.5rem;
+  min-height: 150px;
+  font-size: var(--nexus-font-size-md);
+  background-color: var(--nexus-color-bg-card);
+  box-shadow: var(--nexus-shadows-card-lg);
+  border-radius: var(--nexus-radius-card-lg);
+  &:hover {
+    outline: 3px solid var(--nexus-color-outline-card);
+  }
+  @media screen and (min-width: 1281px) {
+    height: var(--nexus-height-card-lg);
+    font-size: var(--nexus-font-size-lg);
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1280px) {
+    height: var(--nexus-height-card-md);
+    font-size: var(--nexus-font-size-md);
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    height: var(--nexus-height-card-sm);
+    font-size: var(--nexus-font-size-md);
+  }
+  p {
+    align-self: flex-end;
+  }
+}
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV

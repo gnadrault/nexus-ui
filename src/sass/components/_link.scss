@@ -1,0 +1,10 @@
+a {
+  color: var(--nexus-color-text-main);
+  font-size: var(--nexus-font-size-md);
+  &.link {
+    border-radius: 0.375rem;
+    &:focus {
+      outline: 3px solid var(--nexus-color-outline-link);
+    }
+  }
+}
