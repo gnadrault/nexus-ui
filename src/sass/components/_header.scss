@@ -1,12 +1,13 @@
 header {
-  background-color: var(--nexus-color-bg-header);
-  z-index: var(--nexus-z-index-header);
-  backdrop-filter: blur(6px);
   position: fixed;
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 100%;
   top: 0;
+  background-color: var(--nexus-color-bg-header);
+  transition: background-color 350ms ease-in-out;
+  z-index: var(--nexus-pos-header);
+  backdrop-filter: blur(6px);
 
   .container {
     height: 60px;
@@ -14,10 +15,29 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    .header-links {
+    .nav-links {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      // Links large
+      #nav-links-lg {
+        ul {
+          padding-left: 0;
+          list-style: none;
+          li {
+            text-align: center;
+            display: inline;
+            margin-left: 1em;
+            a {
+              padding: 0.3em;
+              &:link {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
 
       #btn-theme {
         margin-left: 2em;
@@ -28,39 +48,11 @@ header {
       }
     }
   }
-  // Links large
-  #header-links-lg {
-    ul {
-      list-style: none;
-      li {
-        text-align: center;
-        display: inline;
-        margin-left: 1em;
-        a {
-          padding: 0.3em;
-          &:link {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  // Links small collapse
-  #header-links-sm {
-    ul {
-      li {
-        padding: 1rem 1rem;
-      }
-    }
-    &.menu-open {
-      height: 215px;
-    }
-  }
 }
 
 // Burger menu
 #burger-menu {
-  //display: none;
+  display: none;
   width: 33px;
   height: 30px;
   margin-left: 2rem;
@@ -135,10 +127,10 @@ header {
 }
 
 @media (max-width: 640px) {
-  #header-links-lg {
+  #nav-links-lg {
     display: none;
   }
-  #header-links-sm.menu-open {
+  #nav-links-sm.menu-open {
     display: block;
   }
   #burger-menu {

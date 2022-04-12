@@ -1,3 +1,9 @@
+:root {
+  --nexus-height-card-sm: 150px;
+  --nexus-height-card-md: 200px;
+  --nexus-height-card-lg: 250px;
+}
+
 .cards {
   display: grid;
   grid-gap: 2rem;

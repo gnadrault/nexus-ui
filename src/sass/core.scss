@@ -19,7 +19,8 @@ p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+ul {
   margin: 0;
 }
 
@@ -81,6 +82,8 @@ select {
 /*  Variables          */
 /* ------------------- */
 :root {
+  --nexus-pos-header: 1000;
+  --nexus-pos-dialog: 1200;
   --nexus-color-text-main: var(--nexus-color-dark-blue);
   --nexus-color-bg-main: var(--nexus-color-white);
   --nexus-color-outline-link: var(--nexus-color-blue-white);
@@ -89,6 +92,13 @@ select {
   --nexus-color-bg-card: var(--nexus-color-white);
   --nexus-shadows-card-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --nexus-color-outline-card: var(--nexus-color-light-blue);
+  --nexus-color-scrollbar: var(--nexus-color-dark-grey-80);
+  svg#sun {
+    display: none;
+  }
+  svg#moon {
+    display: block;
+  }
 }
 
 :root[data-theme="dark"] {
@@ -98,7 +108,14 @@ select {
   --nexus-color-bg-footer: linear-gradient(0deg, rgb(15, 23, 42) 0%, rgb(11, 17, 31) 100%);
   --nexus-color-bg-card: var(--nexus-color-dark-blue-light);
   --nexus-shadows-card-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --nexus-color-outline-card: var(--nexus-color-white-80: );
+  --nexus-color-outline-card: var(--nexus-color-white-80);
+  --nexus-color-scrollbar: var(--nexus-color-light-blue-80);
+  svg#sun {
+    display: block;
+  }
+  svg#moon {
+    display: none;
+  }
 }
 
 /* ------------------- */
@@ -107,7 +124,6 @@ select {
 
 body,
 html {
-  width: 100vw;
   background-color: var(--nexus-color-bg-main);
   color: var(--nexus-color-text-main);
   font-family: var(--nexus-font-family-main);

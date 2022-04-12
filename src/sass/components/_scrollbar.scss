@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+  width: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--nexus-color-scrollbar);
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+}
