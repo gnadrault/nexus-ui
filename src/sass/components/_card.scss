@@ -7,6 +7,12 @@
 .cards {
   display: grid;
   grid-gap: 2rem;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  .-app-open & {
+    transform: scale(0.8);
+  }
+
   @media screen and (min-width: 1025px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -16,6 +22,7 @@
 }
 
 .card {
+  cursor: pointer;
   display: flex;
   padding: 1.5rem;
   min-height: 150px;
@@ -40,6 +47,59 @@
   }
   p {
     align-self: flex-end;
+  }
+}
+
+.card-popup {
+  visibility: hidden;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  width: 60vw;
+  min-height: 60%;
+
+  z-index: 2000;
+  font-size: var(--nexus-font-size-md);
+  background-color: var(--nexus-color-bg-card);
+  box-shadow: var(--nexus-shadows-card-lg);
+  border-radius: var(--nexus-radius-card-lg);
+
+  &__inner {
+    color: #fff;
+    padding: 50px;
+    opacity: 0;
+    transition: opacity 0.15s linear 0s;
+
+    .-popup-open & {
+      opacity: 1;
+      transition: opacity 0.15s linear 0.15s;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+  }
+
+  &__dismiss {
+    font-size: 24px;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  .-popup-open & {
+    visibility: visible;
+    transition: transform 0.3s ease-in-out 0s, visibility 0s linear 0s;
+  }
+
+  .-popup-close & {
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
   }
 }
 

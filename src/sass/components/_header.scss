@@ -19,7 +19,6 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-
       // Links large
       #nav-links-lg {
         ul {
@@ -29,12 +28,6 @@ header {
             text-align: center;
             display: inline;
             margin-left: 1em;
-            a {
-              padding: 0.3em;
-              &:link {
-                text-decoration: none;
-              }
-            }
           }
         }
       }
