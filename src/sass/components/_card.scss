@@ -9,8 +9,8 @@
   grid-gap: 2rem;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
-  .-app-open & {
-    transform: scale(0.8);
+  .-popup-open & {
+    transform: scale(0.95);
   }
 
   @media screen and (min-width: 1025px) {
@@ -51,20 +51,20 @@
 }
 
 .card-popup {
-  visibility: hidden;
-  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  transform-origin: top left;
-  width: 60vw;
-  min-height: 60%;
-
+  width: 100%;
+  min-height: 80%;
+  padding-inline: 1.5rem;
   z-index: 2000;
-  font-size: var(--nexus-font-size-md);
+  max-width: 70rem;
+  transform-origin: top left;
+  visibility: hidden;
+  overflow: hidden;
   background-color: var(--nexus-color-bg-card);
   box-shadow: var(--nexus-shadows-card-lg);
-  border-radius: var(--nexus-radius-card-lg);
+  border-radius: var(--nexus-radius-popup-lg);
 
   &__inner {
     color: #fff;

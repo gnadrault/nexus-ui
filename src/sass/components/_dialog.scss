@@ -1,4 +1,4 @@
-dialog {
+#dialog-menu {
   position: fixed;
   margin-right: 1rem;
   margin-top: 5rem;
@@ -28,4 +28,16 @@ dialog {
       height: 215px;
     }
   }
+}
+
+.backdrop {
+  z-index: 1600;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
