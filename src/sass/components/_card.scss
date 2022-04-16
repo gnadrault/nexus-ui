@@ -94,12 +94,12 @@
 
   .-popup-open & {
     visibility: visible;
-    transition: transform 0.3s ease-in-out 0s, visibility 0s linear 0s;
+    transition: transform 0.3s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
   }
 
   .-popup-close & {
     visibility: hidden;
-    transition: transform 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
+    transition: transform 0.3s ease-out 0s, visibility 0s linear 0.3s;
   }
 }
 

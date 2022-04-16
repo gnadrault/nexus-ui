@@ -62,7 +62,6 @@ el.burgerMenu.addEventListener("click", (e) => {
     document.body.offsetWidth;
     $body.classList.add("-popup-open");
     $popupContainer.style.transform = "translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1)";
-    $backdrop.style.display = "block";
   };
 
   var closePopup = function (e) {
@@ -70,7 +69,6 @@ el.burgerMenu.addEventListener("click", (e) => {
     $popupContainer.style.transform = popup_transform;
     $body.classList.add("-popup-close");
     $body.classList.remove("-popup-open");
-    $backdrop.style.display = "none";
   };
 
   var resetPopup = function (e) {
