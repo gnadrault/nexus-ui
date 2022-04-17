@@ -4,12 +4,13 @@
   --nexus-height-card-lg: 250px;
 }
 
+// CARDS
 .cards {
   display: grid;
   grid-gap: 2rem;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
-  .-popup-open & {
+  .popup-open & {
     transform: scale(0.95);
   }
 
@@ -21,6 +22,7 @@
   }
 }
 
+// CARD
 .card {
   cursor: pointer;
   display: flex;
@@ -50,14 +52,14 @@
   }
 }
 
+// CARD POPUP
 .card-popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   min-height: 80%;
-  padding-inline: 1.5rem;
-  z-index: 2000;
+  z-index: var(--nexus-pos-dialog);
   max-width: 70rem;
   transform-origin: top left;
   visibility: hidden;
@@ -72,7 +74,7 @@
     opacity: 0;
     transition: opacity 0.15s linear 0s;
 
-    .-popup-open & {
+    .popup-open & {
       opacity: 1;
       transition: opacity 0.15s linear 0.15s;
     }
@@ -92,14 +94,29 @@
     }
   }
 
-  .-popup-open & {
+  .popup-open & {
     visibility: visible;
-    transition: transform 0.3s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
+    transition: transform 0.25s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
   }
 
-  .-popup-close & {
+  .popup-close & {
     visibility: hidden;
-    transition: transform 0.3s ease-out 0s, visibility 0s linear 0.3s;
+    transition: transform 0.25s ease-out 0s, visibility 0s linear 0.3s;
+  }
+}
+
+.backdrop {
+  z-index: calc(var(--nexus-pos-dialog) - 10);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  .popup-open & {
+    visibility: visible;
   }
 }
 

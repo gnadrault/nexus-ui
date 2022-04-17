@@ -82,8 +82,6 @@ select {
 /*  Variables          */
 /* ------------------- */
 :root {
-  --nexus-pos-header: 1000;
-  --nexus-pos-dialog: 1200;
   --nexus-color-text-main: var(--nexus-color-dark-blue);
   --nexus-color-bg-main: var(--nexus-color-white);
   --nexus-color-outline-link: var(--nexus-color-blue-white);
@@ -128,6 +126,9 @@ html {
   color: var(--nexus-color-text-main);
   font-family: var(--nexus-font-family-main);
   transition: background-color 350ms ease-in-out;
+  .popup-open & {
+    overflow: hidden;
+  }
 }
 
 h1 {

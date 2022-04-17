@@ -60,20 +60,20 @@ el.burgerMenu.addEventListener("click", (e) => {
     popup_transform = "translate(" + translateX + "," + translateY + ") scale(" + scaleX + ", " + scaleY + ")";
     $popupContainer.style.transform = popup_transform;
     document.body.offsetWidth;
-    $body.classList.add("-popup-open");
+    $body.classList.add("popup-open");
     $popupContainer.style.transform = "translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1)";
   };
 
   var closePopup = function (e) {
     $popupContainer.addEventListener("transitionend", resetPopup, false);
     $popupContainer.style.transform = popup_transform;
-    $body.classList.add("-popup-close");
-    $body.classList.remove("-popup-open");
+    $body.classList.add("popup-close");
+    $body.classList.remove("popup-open");
   };
 
   var resetPopup = function (e) {
     if (e.target === $popupContainer) {
-      $body.classList.remove("-popup-close");
+      $body.classList.remove("popup-close");
       $popupContainer.removeAttribute("style");
       $popupContainer.removeEventListener("transitionend", resetPopup);
     }
