@@ -105,23 +105,20 @@
   }
 }
 
-.backdrop {
-  z-index: calc(var(--nexus-pos-dialog) - 10);
+.card-popup-backdrop {
+  z-index: var(--nexus-pos-dialog-backdrop);
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(6px);
   visibility: hidden;
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.25s ease-in;
   .popup-open & {
     visibility: visible;
+    opacity: 1;
   }
 }
-
-// 320px — 480px: Mobile devices
-// 481px — 768px: iPads, Tablets
-// 769px — 1024px: Small screens, laptops
-// 1025px — 1200px: Desktops, large screens
-// 1201px and more —  Extra large screens, TV

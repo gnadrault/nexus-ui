@@ -126,9 +126,10 @@ html {
   color: var(--nexus-color-text-main);
   font-family: var(--nexus-font-family-main);
   transition: background-color 350ms ease-in-out;
-  .popup-open & {
-    overflow: hidden;
-  }
+}
+
+body.popup-open {
+  overflow: hidden;
 }
 
 h1 {
