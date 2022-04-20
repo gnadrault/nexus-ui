@@ -4,7 +4,7 @@
   --nexus-height-card-lg: 250px;
 }
 
-// CARDS
+// Cards
 .cards {
   display: grid;
   grid-gap: 2rem;
@@ -22,7 +22,7 @@
   }
 }
 
-// CARD
+// Card
 .card {
   cursor: pointer;
   display: flex;
@@ -49,76 +49,5 @@
   }
   p {
     align-self: flex-end;
-  }
-}
-
-// CARD POPUP
-.card-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 80%;
-  z-index: var(--nexus-pos-dialog);
-  max-width: 70rem;
-  transform-origin: top left;
-  visibility: hidden;
-  overflow: hidden;
-  background-color: var(--nexus-color-bg-card);
-  box-shadow: var(--nexus-shadows-card-lg);
-  border-radius: var(--nexus-radius-popup-lg);
-
-  &__inner {
-    color: #fff;
-    padding: 50px;
-    opacity: 0;
-    transition: opacity 0.15s linear 0s;
-
-    .popup-open & {
-      opacity: 1;
-      transition: opacity 0.15s linear 0.15s;
-    }
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    padding: 24px 0;
-  }
-
-  &__dismiss {
-    font-size: 24px;
-
-    > * {
-      pointer-events: none;
-    }
-  }
-
-  .popup-open & {
-    visibility: visible;
-    transition: transform 0.25s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
-  }
-
-  .popup-close & {
-    visibility: hidden;
-    transition: transform 0.25s ease-out 0s, visibility 0s linear 0.3s;
-  }
-}
-
-.card-popup-backdrop {
-  z-index: var(--nexus-pos-dialog-backdrop);
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(6px);
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: opacity 0.25s ease-in;
-  .popup-open & {
-    visibility: visible;
-    opacity: 1;
   }
 }
