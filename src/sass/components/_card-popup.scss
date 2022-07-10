@@ -41,12 +41,12 @@
 
   .popup-open & {
     visibility: visible;
-    transition: transform 0.25s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
+    transition: transform 0.35s cubic-bezier(0.78, 0.4, 0.44, 1.4) 0s, visibility 0s linear 0s;
   }
 
   .popup-close & {
     visibility: hidden;
-    transition: transform 0.25s ease-out 0s, visibility 0s linear 0.3s;
+    transition: transform 0.35s ease-out 0s, visibility 0s linear 0.3s;
   }
 }
 
@@ -67,4 +67,40 @@
     visibility: visible;
     opacity: 1;
   }
+}
+
+@mixin cross($size: 20px, $color: currentColor, $thickness: 1px) {
+  background: none;
+  width: $size;
+  height: $size;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: ($size - $thickness) / 2;
+    left: 0;
+    right: 0;
+    height: $thickness;
+    background: $color;
+    border-radius: $thickness;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.card-popup__dismiss {
+  @include cross(35px, var(--nexus-color-text-main), 5px);
+  cursor: pointer;
+  position: relative;
 }
