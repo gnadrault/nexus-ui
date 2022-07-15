@@ -135,6 +135,11 @@ body.popup-open {
 h1 {
   font-family: var(--nexus-font-family-title);
   font-size: 3em;
+  margin-bottom: 2rem !important;
+}
+
+h2 {
+  margin-bottom: 1rem !important;
 }
 
 svg {

@@ -24,7 +24,6 @@
 
 // Card
 .card {
-  cursor: pointer;
   display: flex;
   padding: 1.5rem;
   min-height: 150px;
@@ -32,9 +31,6 @@
   background-color: var(--nexus-color-bg-card);
   box-shadow: var(--nexus-shadows-card-lg);
   border-radius: var(--nexus-radius-card-lg);
-  &:hover {
-    outline: 3px solid var(--nexus-color-outline-card);
-  }
   @media screen and (min-width: 1281px) {
     height: var(--nexus-height-card-lg);
     font-size: var(--nexus-font-size-lg);
@@ -49,5 +45,17 @@
   }
   p {
     align-self: flex-end;
+  }
+}
+
+.card.card-hover {
+  cursor: pointer;
+  &:hover {
+    outline: 3px solid var(--nexus-color-outline-card);
+  }
+  transition: 0.3s transform ease-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.03);
   }
 }

@@ -37,7 +37,7 @@ export default function popup() {
   document.addEventListener(
     "click",
     function (e) {
-      var matches = e.target.matches(".card");
+      var matches = e.target.matches(".card.card-open");
       if (matches) {
         openPopup(e);
       }

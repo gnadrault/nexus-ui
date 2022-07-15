@@ -1,0 +1,36 @@
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  grid-gap: 2rem;
+  margin-bottom: 4rem;
+  height: 20rem;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "first first second"
+    "third third third";
+  div.project-image {
+    border-radius: var(--nexus-radius-card-md);
+    background-size: cover;
+  }
+}
+
+.project-image--first {
+  grid-area: first;
+  background-image: url("https://picsum.photos/300/200");
+}
+
+.project-image--second {
+  grid-area: second;
+  background-image: url("https://picsum.photos/200/300");
+}
+
+.project-image--third {
+  grid-area: third;
+  background-image: url("https://picsum.photos/300/200");
+}
