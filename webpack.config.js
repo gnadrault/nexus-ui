@@ -1,11 +1,10 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   mode: "production",
   devtool: "source-map",
   optimization: {
@@ -13,13 +12,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "ts-loader",
-        },
-      },
       {
         test: /\.(scss|css)$/,
         use: [
@@ -34,9 +26,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     filename: "index.js",

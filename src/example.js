@@ -1,29 +1,34 @@
-import "./sass/style.scss";
+import { switchTheme, openPopup, closePopup } from "./utils.js";
 
-const btnSwitchTheme: HTMLElement | null = document.querySelector("#btn-theme");
-const burgerMenu: HTMLElement | null = document.querySelector("#burger-menu");
-const dialogMenu: HTMLDialogElement | null = document.querySelector("#dialog-menu");
+const btnSwitchTheme = document.querySelector("#btn-theme");
+const burgerMenu = document.querySelector("#burger-menu");
+const dialogMenu = document.querySelector("#dialog-menu");
 
-export function switchTheme(root: HTMLElement | null) {
-  if (root) {
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+/**
+ * EVENT LISTENER
+ */
+// Switch theme
+btnSwitchTheme?.addEventListener("click", (e) => {
+  const root = document.querySelector("html");
+  switchTheme(root);
+});
+
+// Display dialog menu
+burgerMenu?.addEventListener("click", (e) => {
+  burgerMenu?.classList.toggle("menu-open");
+  if (!dialogMenu?.open) {
+    openPopup(dialogMenu);
+  } else {
+    closePopup(dialogMenu);
   }
-}
+});
 
-export function openPopup(dialog: HTMLDialogElement | null) {
-  if (dialog) dialog.show();
-}
+function popup() {
+  var popup_transform = "";
+  var $body = document.body;
+  var $popupContainer = document.querySelector(".card-popup");
 
-export function closePopup(dialog: HTMLDialogElement | null) {
-  if (dialog) dialog.close();
-}
-
-export function popup() {
-  var popup_transform: string = "";
-  var $body: HTMLElement = document.body;
-  var $popupContainer: HTMLElement | null = document.querySelector(".card-popup");
-
-  var openPopup = function (e: any) {
+  var openPopup = function (e) {
     if ($popupContainer) {
       var popup_bounding_rect = $popupContainer.getBoundingClientRect(),
         card_bounding_rect = e.target.getBoundingClientRect(),
@@ -40,7 +45,7 @@ export function popup() {
     }
   };
 
-  var closePopup = function (e: any) {
+  var closePopup = function (e) {
     if ($popupContainer) {
       $popupContainer.addEventListener("transitionend", resetPopup, false);
       $popupContainer.style.transform = popup_transform;
@@ -49,7 +54,7 @@ export function popup() {
     }
   };
 
-  var resetPopup = function (e: any) {
+  var resetPopup = function (e) {
     if ($popupContainer && e.target === $popupContainer) {
       $body.classList.remove("popup-close");
       $popupContainer.removeAttribute("style");
@@ -59,7 +64,7 @@ export function popup() {
 
   document.addEventListener(
     "click",
-    function (e: any) {
+    function (e) {
       var matches = e.target.matches(".card.card-open");
       if (matches) {
         openPopup(e);
@@ -70,7 +75,7 @@ export function popup() {
 
   document.addEventListener(
     "click",
-    function (e: any) {
+    function (e) {
       var matches = e.target.matches(".card-popup__dismiss");
       if (matches) {
         closePopup(e);
@@ -89,24 +94,5 @@ export function popup() {
     false
   );
 }
-
-/**
- * EVENT LISTENER
- */
-// Switch theme
-btnSwitchTheme?.addEventListener("click", (e: Event) => {
-  const root: HTMLElement | null = document.querySelector("html");
-  switchTheme(root);
-});
-
-// Display dialog menu
-burgerMenu?.addEventListener("click", (e) => {
-  burgerMenu?.classList.toggle("menu-open");
-  if (!dialogMenu?.open) {
-    openPopup(dialogMenu);
-  } else {
-    closePopup(dialogMenu);
-  }
-});
 
 popup();
