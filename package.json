@@ -1,8 +1,12 @@
 {
-  "name": "@GNadrault/nexus-ui",
+  "name": "nexus-ui",
   "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
+  "types": "dist/utils.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "exit 0",
     "build": "webpack --config webpack.config.js --mode production",
@@ -17,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/GNadrault/nexus-ui/issues"
   },
-  "homepage": "https://github.com/GNadrault/nexus-ui#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "sass": "^1.53.0",
