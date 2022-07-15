@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "sourceMap": true,
     "module": "es6",
     "target": "es5",
-    "noEmitOnError": true,
-    "strict": true,
-    "declaration": true,
-    "moduleResolution": "node"
+    "declaration": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/index.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -1,24 +1,36 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
+  mode: "production",
+  devtool: "source-map",
+  optimization: {
+    usedExports: true,
+  },
   module: {
     rules: [
       {
-        // Typescript
         test: /\.tsx?$/,
-        use: "ts-loader",
         exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+        },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(scss|css)$/,
         use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
+          MiniCssExtractPlugin.loader,
           "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
     ],
@@ -27,7 +39,14 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "bundle.js",
+    filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: "src/assets", to: "assets" }],
+    }),
+  ],
 };
