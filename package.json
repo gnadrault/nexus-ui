@@ -1,15 +1,15 @@
 {
   "name": "@gnadrault/nexus-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "/dist"
+    "/dist/**/*"
   ],
   "scripts": {
     "test": "exit 0",
-    "build": "webpack --config webpack.config.js --mode production",
-    "build-watch": "webpack --config webpack.config.js --mode production --watch"
+    "build": "npx tsc && webpack --config webpack.config.js --mode development"
   },
   "repository": {
     "type": "git",
