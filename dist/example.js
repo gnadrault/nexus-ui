@@ -10,23 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/sass/style.scss":
-/*!*****************************!*\
-  !*** ./src/sass/style.scss ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@gnadrault/nexus-ui/./src/sass/style.scss?");
-
-/***/ }),
-
-/***/ "./src/index.ts":
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
+/***/ "./src/example.ts":
+/*!************************!*\
+  !*** ./src/example.ts ***!
+  \************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.switchTheme = exports.openPopup = exports.closePopup = void 0;\r\nvar utils_1 = __webpack_require__(/*! ./utils */ \"./src/utils.ts\");\r\nObject.defineProperty(exports, \"closePopup\", ({ enumerable: true, get: function () { return utils_1.closePopup; } }));\r\nObject.defineProperty(exports, \"openPopup\", ({ enumerable: true, get: function () { return utils_1.openPopup; } }));\r\nObject.defineProperty(exports, \"switchTheme\", ({ enumerable: true, get: function () { return utils_1.switchTheme; } }));\r\n__webpack_require__(/*! ./sass/style.scss */ \"./src/sass/style.scss\");\r\n\n\n//# sourceURL=webpack://@gnadrault/nexus-ui/./src/index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.exampleApp = void 0;\r\nvar utils_1 = __webpack_require__(/*! ./utils */ \"./src/utils.ts\");\r\nvar btnSwitchTheme = document.querySelector(\"#btn-theme\");\r\nvar burgerMenu = document.querySelector(\"#burger-menu\");\r\nvar dialogMenu = document.querySelector(\"#dialog-menu\");\r\nfunction exampleApp() {\r\n    /**\r\n     * EVENT LISTENER\r\n     */\r\n    // Switch theme\r\n    btnSwitchTheme === null || btnSwitchTheme === void 0 ? void 0 : btnSwitchTheme.addEventListener(\"click\", function (e) {\r\n        var root = document.querySelector(\"html\");\r\n        (0, utils_1.switchTheme)(root);\r\n    });\r\n    // Display dialog menu\r\n    burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.addEventListener(\"click\", function (e) {\r\n        burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.classList.toggle(\"menu-open\");\r\n        if (!(dialogMenu === null || dialogMenu === void 0 ? void 0 : dialogMenu.open)) {\r\n            (0, utils_1.openPopup)(dialogMenu);\r\n        }\r\n        else {\r\n            (0, utils_1.closePopup)(dialogMenu);\r\n        }\r\n    });\r\n    (0, utils_1.popup)();\r\n}\r\nexports.exampleApp = exampleApp;\r\nexampleApp();\r\n\n\n//# sourceURL=webpack://@gnadrault/nexus-ui/./src/example.ts?");
 
 /***/ }),
 
@@ -67,23 +57,11 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/example.ts");
 /******/ 	module.exports = __webpack_exports__;
 /******/ 	
 /******/ })()

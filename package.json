@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "exit 0",
-    "build": "npx tsc && webpack --config webpack.config.js --mode development"
+    "build": "webpack --config webpack.common.js",
+    "start": "webpack --config webpack.common.js --watch"
   },
   "repository": {
     "type": "git",
