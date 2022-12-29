@@ -1,3 +1,34 @@
+@mixin cross($size: 20px, $color: currentColor, $thickness: 1px) {
+  background: none;
+  width: $size;
+  height: $size;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: calc(($size - $thickness) / 2);
+    left: 0;
+    right: 0;
+    height: $thickness;
+    background: $color;
+    border-radius: $thickness;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  span {
+    display: block;
+  }
+}
+
+/* Dialog menu header */
 #dialog-menu {
   position: fixed;
   margin-right: 1rem;
@@ -27,5 +58,43 @@
     &.menu-open {
       height: 215px;
     }
+  }
+}
+
+/* Dialog card */
+#dialog-card {
+  height: 32rem;
+  width: 70rem;
+  max-width: 90%;
+  max-height: 90%;
+  border: none;
+  color: var(--nexus-color-text-main);
+  background-color: var(--nexus-color-bg-card);
+  box-shadow: var(--nexus-shadows-card-lg);
+  border-radius: var(--nexus-radius-popup-lg);
+
+  .dialog-card__wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .dialog-card__inner {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dialog-card__close {
+      @include cross(35px, var(--nexus-color-text-main), 5px);
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &::backdrop {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
   }
 }

@@ -270,14 +270,13 @@
         </ul>
       </div>
     </dialog>
-    <div class="card-popup">
-      <div class="card-popup__container">
-        <div class="card-popup__inner">
-          <div class="card-popup__header">
-            <h1 class="card-popup__title">This is an App</h1>
-            <div class="card-popup__dismiss"></div>
+    <dialog id="dialog-card" class="anim-stretch">
+      <div class="dialog-card__wrapper">
+        <div class="dialog-card__inner">
+          <div class="dialog-card__header">
+            <h1 class="dialog-card__title">This is an App</h1>
           </div>
-          <div class="card-popup__body">
+          <div class="dialog-card__body">
             popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a
             line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
             those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
@@ -288,9 +287,9 @@
             also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
           </div>
         </div>
+        <div class="dialog-card__close"></div>
       </div>
-    </div>
-    <div class="card-popup-backdrop"></div>
-    <script src="../dist/example.js" type="module"></script>
+    </dialog>
+    <script src="../dist/index.js"></script>
   </body>
 </html>
