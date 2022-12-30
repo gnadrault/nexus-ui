@@ -63,10 +63,9 @@
 
 /* Dialog card */
 #dialog-card {
-  height: 32rem;
-  width: 70rem;
+  min-height: 32rem;
+  width: 75rem;
   max-width: 90%;
-  max-height: 90%;
   border: none;
   color: var(--nexus-color-text-main);
   background-color: var(--nexus-color-bg-card);

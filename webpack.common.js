@@ -4,9 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: {
     index: "./src/index.ts",
+    example: "./src/example.ts",
   },
   module: {
     rules: [
@@ -37,6 +38,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+    libraryTarget: "commonjs2",
   },
   plugins: [
     new MiniCssExtractPlugin(),
