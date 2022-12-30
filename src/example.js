@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const btnSwitchTheme: HTMLElement | null = document.querySelector("#btn-theme");
-  const burgerMenu: HTMLElement | null = document.querySelector("#burger-menu");
-  const dialogMenu: HTMLDialogElement | null = document.querySelector("#dialog-menu");
-  const dialogCard: HTMLDialogElement | null = document.querySelector("#dialog-card");
-  const cardsOpen: NodeListOf<HTMLElement> | null = document.querySelectorAll(".card.card-open");
-  const btnCardDialogClose: HTMLElement | null = document.querySelector(".dialog-card__close");
-  const root: HTMLElement | null = document.querySelector("html");
-  const darkTheme: string = "dark";
-  const lightTheme: string = "light";
+  const btnSwitchTheme = document.querySelector("#btn-theme");
+  const burgerMenu = document.querySelector("#burger-menu");
+  const dialogMenu = document.querySelector("#dialog-menu");
+  const dialogCard = document.querySelector("#dialog-card");
+  const cardsOpen = document.querySelectorAll(".card.card-open");
+  const btnCardDialogClose = document.querySelector(".dialog-card__close");
+  const root = document.querySelector("html");
+  const darkTheme = "dark";
+  const lightTheme = "light";
 
   function switchTheme() {
     if (root) {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function openDialog(dialog: HTMLDialogElement | null, modal: boolean = false) {
+  function openDialog(dialog, modal = false) {
     if (dialog) {
       if (modal) {
         document.body.classList.add("modal-open");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function closeDialog(dialog: HTMLDialogElement | null) {
+  function closeDialog(dialog) {
     if (dialog) dialog.close();
   }
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * EVENT LISTENER
    */
   // Switch theme
-  btnSwitchTheme?.addEventListener("click", (e: Event) => {
+  btnSwitchTheme?.addEventListener("click", (e) => {
     switchTheme();
   });
 

@@ -7,7 +7,6 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.ts",
-    example: "./src/example.ts",
   },
   module: {
     rules: [
@@ -38,13 +37,18 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
     libraryTarget: "commonjs2",
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
     new CopyPlugin({
-      patterns: [{ from: "src/assets", to: "assets" }],
+      patterns: [
+        { from: "src/assets", to: "assets" },
+        { from: "src/example.html", to: "example" },
+        { from: "src/example.js", to: "example" },
+      ],
     }),
   ],
 };
